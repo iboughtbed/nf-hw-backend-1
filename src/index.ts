@@ -15,10 +15,8 @@ app.use(logger);
 app.use(express.json());
 app.use("/api/v1/", globalRouter);
 
-app.get("/", () => console.log("Express on Vercel"));
-
-app.get("/helloworld", (request, response) => {
-  response.send("Hello World!");
+app.get("/", (req, res) => {
+  res.send("Hello, World");
 });
 
 app.listen(PORT, () => {
